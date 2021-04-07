@@ -1,5 +1,10 @@
 import 'dotenv/config'
-import env from './config/env'
-import app from './http/app'
+import env from './shared/helpers/env'
+import { connectionFactory } from './providers/mongoose'
 
-app.listen(env.port, () => console.log(`Server running on port ${env.port}`))
+connectionFactory.connect()
+  .then(async () => {
+    const app = (await import('./http/app')).default
+    app.listen(env.port, () => console.log(`Server running on port ${env.port}`))
+  })
+  .catch(console.error)
