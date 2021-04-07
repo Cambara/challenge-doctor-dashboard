@@ -1,5 +1,5 @@
 import { ConnectionFactory } from './connection.factory'
-import env from '../../config/env'
+import env from '../../shared/helpers/env'
 
 const connectionFactory = ConnectionFactory.getInstance(env.mongoDBHost)
 

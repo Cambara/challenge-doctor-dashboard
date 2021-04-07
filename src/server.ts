@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import env from './config/env'
+import env from './shared/helpers/env'
 import { connectionFactory } from './providers/mongoose'
 
 connectionFactory.connect()
