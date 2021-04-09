@@ -11,7 +11,7 @@ export class LabActiveListService implements IService<ILabActiveListDto, ILabDoc
     this.labRepository = labRepository
   }
 
-  execute = ({ page, limit }: ILabActiveListDto): Promise<ILabDocument[]> => {
+  execute = async ({ page, limit }: ILabActiveListDto): Promise<ILabDocument[]> => {
     const skip = (page - 1) * limit
     return this.labRepository.find({
       status: StatusEnum.ATIVO

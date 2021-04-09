@@ -12,7 +12,7 @@ export class LabAddService implements IService<ILabAddDto, ILabDocument> {
     this.labRepository = labRepository
   }
 
-  execute = (dto: ILabAddDto): Promise<ILabDocument> => {
+  execute = async (dto: ILabAddDto): Promise<ILabDocument> => {
     const lab:ILabModel = Object.assign({}, dto, { status: StatusEnum.ATIVO })
     return this.labRepository.create(lab)
   }

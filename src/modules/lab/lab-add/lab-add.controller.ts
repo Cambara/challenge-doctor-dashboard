@@ -22,7 +22,7 @@ export class LabAddController implements IController {
 
       if (typeof params !== 'object' || Array.isArray(params)) return badRequest(params, response)
 
-      const lab = await this.labAddService.execute(body)
+      const lab = await this.labAddService.execute(params)
       return successRequest(lab, response)
     } catch (error) {
       return internalErrorRequest(error, response)
