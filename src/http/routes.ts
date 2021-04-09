@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { labAddController, labActiveListController } from '../modules'
+import { labAddController, labActiveListController, labUpdateController } from '../modules'
 
 const router = Router()
 
@@ -11,5 +11,6 @@ router.get('/health', (request, response) => response.status(200).send())
 
 router.post('/labs', labAddController.handle)
 router.get('/labs', labActiveListController.handle)
+router.put('/labs/:id', labUpdateController.handle)
 
 export { router }
