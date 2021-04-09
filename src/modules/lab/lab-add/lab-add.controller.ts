@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { badRequest, internalErrorRequest, successRequest } from '../../../shared/helpers/http-response.helper'
 import { LabAddService } from './lab-add.service'
 import { ILabAddDto } from './lab-add.dto'
-import { validator } from './lab-add.validator'
+import { defaultLabValidator } from '..//default.validator'
 import { ValidatorService } from '../../../shared/services/validator/validator.service'
 export class LabAddController implements IController {
   private readonly labAddService:LabAddService
@@ -18,7 +18,7 @@ export class LabAddController implements IController {
     try {
       const { body } = request
 
-      const params = await this.validatorService.execute<ILabAddDto>({ schema: validator(), params: body })
+      const params = await this.validatorService.execute<ILabAddDto>({ schema: defaultLabValidator(), params: body })
 
       if (typeof params !== 'object' || Array.isArray(params)) return badRequest(params, response)
 

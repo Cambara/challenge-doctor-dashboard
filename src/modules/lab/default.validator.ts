@@ -1,6 +1,6 @@
 import { object, ObjectSchema, string } from 'yup'
 
-export const validator = ():ObjectSchema => {
+export const defaultLabValidator = ():ObjectSchema => {
   return object({
     name: string().required(),
     address: object({
