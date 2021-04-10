@@ -1,5 +1,12 @@
 import { Router } from 'express'
-import { labAddController, labActiveListController, labUpdateController, labRemoveController, medicalAnalysisAddController } from '../modules'
+import {
+  labAddController,
+  labActiveListController,
+  labUpdateController,
+  labRemoveController,
+  medicalAnalysisAddController,
+  medicalAnalysisActiveListController
+} from '../modules'
 
 const router = Router()
 
@@ -16,5 +23,6 @@ router.delete('/labs/:id', labRemoveController.handle)
 // Medical Analysis Routers
 
 router.post('/medical-analysis', medicalAnalysisAddController.handle)
+router.get('/medical-analysis', medicalAnalysisActiveListController.handle)
 
 export { router }
