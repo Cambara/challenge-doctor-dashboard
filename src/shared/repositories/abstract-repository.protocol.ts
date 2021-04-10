@@ -3,7 +3,7 @@ export * from 'mongoose'
 
 /*
   T Document
-  J DTO to add a new object
+  J Model to add a new object
 */
 export interface IAbstractRepository< T extends Document, J> {
   find (cond: FilterQuery<T>, project?: unknown, options?: QueryOptions): Promise<T[]>
