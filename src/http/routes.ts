@@ -7,7 +7,8 @@ import {
   medicalAnalysisAddController,
   medicalAnalysisActiveListController,
   medicalAnalysisUpdateController,
-  medicalAnalysisRemoveController
+  medicalAnalysisRemoveController,
+  associateLabController
 } from '../modules'
 
 const router = Router()
@@ -27,5 +28,6 @@ router.post('/medical-analysis', medicalAnalysisAddController.handle)
 router.get('/medical-analysis', medicalAnalysisActiveListController.handle)
 router.put('/medical-analysis/:id', medicalAnalysisUpdateController.handle)
 router.delete('/medical-analysis/:id', medicalAnalysisRemoveController.handle)
+router.patch('/medical-analysis/:id/associate-lab', associateLabController.handle)
 
 export { router }
