@@ -28,11 +28,13 @@
 |   |   ├── index.ts                          <- Arquivo para expor os módulos
 |   ├── providers                             <- Pasta contendo as bibliotecas utilizadas
 |   ├── shared                                <- Pasta com abstrações que podem ser utilizadas em diferentes módulos
-|   |   ├── controllers
-|   |   ├── enums
-|   |   ├── helpers
-|   |   ├── repositories
-|   |   ├── services
+|   |   ├── controllers                       <- Contém os arquivos controladores com abstrações
+|   |   ├── enums                             <- Contém os arquivos de enums que podem ser utilizados em diferentes módulos
+|   |   ├── helpers                           <- Contém os arquivos de ajuda que podem ser utilizados em diferentes módulos
+|   |   |   ├── env.helper.ts                 <- Arquivo com o valor default das variáveis utilizadas na aplicação
+|   |   |   ├── http-response.helper.ts       <- Arquivo para padronizar as respostas da aplicação
+|   |   ├── repositories                      <- Contém os repositórios que podem ser utilizados em diferentes módulos eo repositório abstrato
+|   |   ├── services                          <- Contém os serviços que podem ser utilizados em diferentes módulos
 |   ├── server.ts                             <- Arquivo para inicializar o servidor
 
 ```
@@ -43,3 +45,11 @@
 - Utilizar no ambiente local ```npm start``` ou ```yarn start```;
 - Utilizar o arquivo **.env** caso queira alterar o valor default de alguma variável de ambiente;
 
+## Ambiente de testes
+
+https://challengedoctordashboard.herokuapp.com/
+
+
+## Documentação da API
+
+[Link](doc/README.md)
